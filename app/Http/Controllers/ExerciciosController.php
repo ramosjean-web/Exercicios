@@ -16,4 +16,15 @@ class ExerciciosController extends Controller
         $soma = $valor1 + $valor2;
         return view('exer1', ['soma' => $soma]);
     }
+
+    public function abrirFormExer2(){
+        return view('exer2');
+    }
+
+    public function respostaExer2(Request $request){
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+        $sub = $valor1 - $valor2;
+        return view('exer2', ['sub' => $sub]);
+    }
 }
