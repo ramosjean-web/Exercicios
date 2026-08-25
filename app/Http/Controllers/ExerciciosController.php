@@ -27,4 +27,31 @@ class ExerciciosController extends Controller
         $sub = $valor1 - $valor2;
         return view('exer2', ['sub' => $sub]);
     }
+
+    public function abrirFormExer3(){
+        return view('exer3');
+    }
+
+    public function respostaExer3(Request $request){
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+        $mult = $valor1 * $valor2;
+        return view('exer3', ['mult' => $mult]);
+    }
+
+    public function abrirFormExer4(){
+        return view('exer4');
+    }
+
+    public function respostaExer4(Request $request){
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+            if ($valor2 == 0){
+                return view('exer4', ['erro' => 'Não é possivel dividir por zero.']);
+            }
+        $div = $valor1  / $valor2;
+        return view('exer4', ['div' => $div]);
+    }
+
+
 }
