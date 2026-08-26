@@ -85,4 +85,14 @@ public function abrirFormExer6(){
         $cel = ($fahrenheit - 32) * (5/9);
         return view('exer7', ['cel' => $cel]);
     }
+     public function abrirFormExer8(){
+        return view('exer8');
+    }
+    public function respostaExer8(Request $request){
+        $base = $request -> valor1;
+        $altura = $request -> valor2;
+        $area = ($base * $altura);
+        return view('exer8',['area' => $area]);
+    }
+
 }
