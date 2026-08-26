@@ -184,7 +184,7 @@ class ExerciciosController extends Controller
         $resu = $capital * ($taxa/100) * $periodo;
         return view('exer17',['resul' => $resul]);
     }
-    
+
     public function abrirFormExer18(){
         return view('exer18');
     }
@@ -195,5 +195,27 @@ class ExerciciosController extends Controller
         $juros = $capital * ( 1+ ($taxa/100)) ** $periodo;
         return view('exer18',['juros' => $juros]);
     }
+
+    public function abrirFormExer19(){
+        return view('exer19');
+    }
+    public function respostaExer19(Request $request){
+        $dias = $request -> valor1;
+        $horas = $dias * 24;
+        $minutos = $horas * 60;
+        $segundos = $minutos * 60;
+        return view('exer19',[' horas' => $horas, 'minutos' => $minutos, 'segundos' => $sgundos ]);
+    }
+
+    public function abrirFormExer20(){
+        return view('exer20');
+    }
+    public function respostaExer20(Request $request){
+        $distancia = $request -> valor1;
+        $tempo = $request -> valor2;
+        $media = $distancia / $tempo;
+        return view('exer20',['media' => $media]);
+    }
+
     
 }
