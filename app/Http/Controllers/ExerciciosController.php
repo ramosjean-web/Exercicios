@@ -137,4 +137,21 @@ class ExerciciosController extends Controller
         $cm = $metro * 100;
         return view('exer13',['cm' => $cm]);
     }
+    public function abrirFormExer14(){
+        return view('exer14');
+    }
+    public function respostaExer14(Request $request){
+        $km = $request -> valor1;
+        $milhas = $km * 0.6213712;
+        return view('exer14',[' milhas' => $milhas]);
+    }
+    public function abrirFormExer15(){
+        return view('exer15');
+    }
+    public function respostaExer15(Request $request){
+        $peso = $request -> valor1;
+        $altura = $request -> valor2;
+        $imc = $peso * $altura ** 2;
+        return view('exer15',[' imc' => $imc]);
+    }
 }
