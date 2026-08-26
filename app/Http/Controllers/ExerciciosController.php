@@ -94,5 +94,21 @@ public function abrirFormExer6(){
         $area = ($base * $altura);
         return view('exer8',['area' => $area]);
     }
-
+  public function abrirFormExer9(){
+        return view('exer9');
+    }
+    public function respostaExer9(Request $request){
+        $raio = $request -> valor1;
+            $area = ($raio ** 2) *3.14;
+        return view('exer9',['area' => $area]);
+    }
+ public function abrirFormExer10(){
+        return view('exer10');
+    }
+    public function respostaExer10(Request $request){
+        $largura = $request -> valor1;
+        $altura = $request -> valor2;
+        $perimetro = 2 * ($largura + $altura);
+        return view('exer10',['perimetro' => $perimetro]);
+    }
 }
