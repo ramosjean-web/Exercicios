@@ -65,7 +65,7 @@ class ExerciciosController extends Controller
         $media = ($valor1 + $valor2 + $valor3) / 3;
         return view('exer3', ['media' => $media]);
     }
-public function abrirFormExer6(){
+    public function abrirFormExer6(){
         return view('exer6');
     }
 
@@ -94,7 +94,7 @@ public function abrirFormExer6(){
         $area = ($base * $altura);
         return view('exer8',['area' => $area]);
     }
-  public function abrirFormExer9(){
+     public function abrirFormExer9(){
         return view('exer9');
     }
     public function respostaExer9(Request $request){
@@ -102,7 +102,8 @@ public function abrirFormExer6(){
             $area = ($raio ** 2) *3.14;
         return view('exer9',['area' => $area]);
     }
- public function abrirFormExer10(){
+    
+    public function abrirFormExer10(){
         return view('exer10');
     }
     public function respostaExer10(Request $request){
@@ -110,5 +111,30 @@ public function abrirFormExer6(){
         $altura = $request -> valor2;
         $perimetro = 2 * ($largura + $altura);
         return view('exer10',['perimetro' => $perimetro]);
+    }
+     public function abrirFormExer11(){
+        return view('exer11');
+    }
+    public function respostaExer11(Request $request){
+        $raio = $request -> valor1;
+        $perimetro = 2 * 3.14 * $raio;
+        return view('exer11',['perimetro' => $perimetro]);
+    }
+    public function abrirFormExer12(){
+        return view('exer12');
+    }
+    public function respostaExer12(Request $request){
+        $base = $request -> valor1;
+        $expoente = $request -> valor2;
+        $resultado = $base ** $expoente;
+        return view('exer12',['perimetro' => $perimetro]);
+    }
+    public function abrirFormExer13(){
+        return view('exer13');
+    }
+    public function respostaExer13(Request $request){
+        $metro = $request -> valor1;
+        $cm = $metro * 100;
+        return view('exer13',['cm' => $cm]);
     }
 }
