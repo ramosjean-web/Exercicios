@@ -65,6 +65,7 @@ class ExerciciosController extends Controller
         $media = ($valor1 + $valor2 + $valor3) / 3;
         return view('exer3', ['media' => $media]);
     }
+
     public function abrirFormExer6(){
         return view('exer6');
     }
@@ -75,6 +76,7 @@ class ExerciciosController extends Controller
         $fahr = $celcius * 1.8 + 32;
         return view('exer6', ['fahr' => $fahr]);
     }
+
     public function abrirFormExer7(){
         return view('exer7');
     }
@@ -85,6 +87,7 @@ class ExerciciosController extends Controller
         $cel = ($fahrenheit - 32) * (5/9);
         return view('exer7', ['cel' => $cel]);
     }
+
      public function abrirFormExer8(){
         return view('exer8');
     }
@@ -94,6 +97,7 @@ class ExerciciosController extends Controller
         $area = ($base * $altura);
         return view('exer8',['area' => $area]);
     }
+
      public function abrirFormExer9(){
         return view('exer9');
     }
@@ -112,6 +116,7 @@ class ExerciciosController extends Controller
         $perimetro = 2 * ($largura + $altura);
         return view('exer10',['perimetro' => $perimetro]);
     }
+
      public function abrirFormExer11(){
         return view('exer11');
     }
@@ -120,6 +125,7 @@ class ExerciciosController extends Controller
         $perimetro = 2 * 3.14 * $raio;
         return view('exer11',['perimetro' => $perimetro]);
     }
+
     public function abrirFormExer12(){
         return view('exer12');
     }
@@ -129,6 +135,7 @@ class ExerciciosController extends Controller
         $resultado = $base ** $expoente;
         return view('exer12',['perimetro' => $perimetro]);
     }
+
     public function abrirFormExer13(){
         return view('exer13');
     }
@@ -137,6 +144,7 @@ class ExerciciosController extends Controller
         $cm = $metro * 100;
         return view('exer13',['cm' => $cm]);
     }
+
     public function abrirFormExer14(){
         return view('exer14');
     }
@@ -145,6 +153,7 @@ class ExerciciosController extends Controller
         $milhas = $km * 0.6213712;
         return view('exer14',[' milhas' => $milhas]);
     }
+
     public function abrirFormExer15(){
         return view('exer15');
     }
@@ -154,4 +163,26 @@ class ExerciciosController extends Controller
         $imc = $peso * $altura ** 2;
         return view('exer15',[' imc' => $imc]);
     }
+
+    public function abrirFormExer16(){
+        return view('exer16');
+    }
+    public function respostaExer16(Request $request){
+        $preco = $request -> valor1;
+        $porcentual = $request -> valor2;
+        $des = $preco - $preco *($porcentual / 100);
+        return view('exer16',[' des' => $des]);
+    }
+    public function abrirFormExer17(){
+        return view('exer17');
+    }
+    public function respostaExer17(Request $request){
+        $capital = $request -> valor1;
+        $taxa = $request -> valor2;
+        $periodo = $request -> valor3;
+        $resu = $capital * ($taxa/100) * $periodo;
+        return view('exer17',['resul' => $resul]);
+    }
+
+    
 }
